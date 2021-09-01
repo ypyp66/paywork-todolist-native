@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-function Header({ createItem }) {
+function TodoCreate({ createItem }) {
   const [todoInput, setTodoInput] = useState("");
 
   const submitTodo = () => {
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Header;
+export default TodoCreate;

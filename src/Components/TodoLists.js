@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleSheet, View, FlatList } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
+import { StyleSheet, FlatList } from "react-native";
 import TodoItem from "./TodoItem";
 
 function TodoLists({ todoState, removeItem, toggleChecked, updateItem }) {

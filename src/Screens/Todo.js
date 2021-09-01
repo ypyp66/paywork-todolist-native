@@ -1,18 +1,14 @@
-import React, { useEffect } from "react";
-import { Alert, StyleSheet, Text, View } from "react-native";
-import TodoLists from "../Components/TodoLists";
-import TodoCreate from "../Components/TodoCreate";
+import React from "react";
+import { StyleSheet, Text } from "react-native";
 import styled from "styled-components/native";
+import { TodoLists, TodoCreate, Alerts } from "../Components";
 import { TodoService } from "../Utils/TodoService";
-import { getTodos } from "../Store/Actions/todoAction";
-import { useDispatch, useSelector } from "react-redux";
-import Alerts from "../Components/Alert";
+import { useSelector } from "react-redux";
 
 function Todo() {
   const { todoState, createItem, removeItem, toggleChecked, updateItem } =
     TodoService();
   const error = useSelector((state) => state.todo.error);
-  const dispatch = useDispatch();
 
   return (
     <Container>
