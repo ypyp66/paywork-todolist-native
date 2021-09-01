@@ -4,6 +4,8 @@ import {
   UPDATE_TODO,
   TOGGLE_TODO,
   SET_TODOS,
+  INCREASE,
+  DECREASE,
 } from "./types";
 
 export const setTodos = (todo) => {

@@ -1,21 +1,32 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 
 function TodoLists({ todoState, removeItem, toggleChecked }) {
   return (
-    <View style={styles.container}>
-      {todoState.map((item) => (
+    // <View style={styles.container}>
+    //   {todoState.map((item) => (
+    //     <TodoItem
+    //       key={item.id}
+    //       id={item.id}
+    //       data={item}
+    //       removeItem={removeItem}
+    //       toggleChecked={toggleChecked}
+    //     />
+    //   ))}
+    // </View>
+    <FlatList
+      keyExtractor={(item) => item.id}
+      data={todoState}
+      renderItem={({ item }) => (
         <TodoItem
-          key={item.id}
-          id={item.id}
           data={item}
           removeItem={removeItem}
           toggleChecked={toggleChecked}
         />
-      ))}
-    </View>
+      )}
+    />
   );
 }
 const styles = StyleSheet.create({

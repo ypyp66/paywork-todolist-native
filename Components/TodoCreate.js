@@ -35,10 +35,7 @@ function Header({ createItem }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginLeft: 20,
-    marginRight: 20,
-  },
+  container: {},
   input: {
     borderRadius: 10,
     backgroundColor: "#FFF",

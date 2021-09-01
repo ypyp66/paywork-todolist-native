@@ -8,7 +8,7 @@ import { TodoService } from "../Utils/TodoService";
 function Todo() {
   const { todoState, createItem, removeItem, toggleChecked } = TodoService();
   return (
-    <Container style={styles.container}>
+    <Container>
       <Text style={styles.title}>Todo App</Text>
       <TodoCreate createItem={createItem} />
       <TodoLists
@@ -25,15 +25,11 @@ export default Todo;
 const Container = styled.View`
   display: flex;
   background-color: #eee;
+  height: 100%;
+  padding: 20px;
 `;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    paddingTop: 50,
-    backgroundColor: "#EEE",
-  },
   title: {
     fontWeight: "800",
     fontSize: 30,
