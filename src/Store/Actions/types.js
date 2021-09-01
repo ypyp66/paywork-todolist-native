@@ -1,0 +1,15 @@
+export const CREATE_TODO = "create_todo";
+export const CREATE_TODO_SUCCESS = "create_todo_success";
+export const REMOVE_TODO = "remove_todo";
+export const REMOVE_TODO_SUCCESS = "remove_todo_success";
+export const UPDATE_TODO = "update_todo";
+export const UPDATE_TODO_SUCCESS = "update_todo_success";
+export const TOGGLE_TODO = "toggle_todo";
+export const TOGGLE_TODO_SUCCESS = "toggle_todo_success";
+export const GET_TODOS = "get_posts";
+export const GET_TODOS_SUCCESS = "get_todos_success";
+export const INCREASE = "INCREASE";
+export const DECREASE = "DECREASE";
+export const INCREASE_ASYNC = "INCREASE_ASYNC";
+export const DECREASE_ASYNC = "DECREASE_ASYNC";
+export const FAILURE = "failure";

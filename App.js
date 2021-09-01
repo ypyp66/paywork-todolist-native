@@ -1,13 +1,12 @@
 import React from "react";
 import { Provider } from "react-redux";
-import Counter from "./Components/Counter";
-import Todo from "./Screens/Todo";
-import store from "./Store";
+import Todo from "./src/Screens/Todo";
+import store from "./src/Store";
 
 export default function App() {
   return (
     <Provider store={store}>
-      <Counter />
+      <Todo />
     </Provider>
   );
 }
