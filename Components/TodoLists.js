@@ -3,13 +3,17 @@ import { StyleSheet, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 
-function TodoLists() {
-  const datas = useSelector((state) => state.todo);
-
+function TodoLists({ todoState, removeItem, toggleChecked }) {
   return (
     <View style={styles.container}>
-      {datas.map((data) => (
-        <TodoItem key={data.id} id={data.id} data={data} />
+      {todoState.map((item) => (
+        <TodoItem
+          key={item.id}
+          id={item.id}
+          data={item}
+          removeItem={removeItem}
+          toggleChecked={toggleChecked}
+        />
       ))}
     </View>
   );

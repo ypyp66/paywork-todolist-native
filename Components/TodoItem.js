@@ -2,25 +2,19 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import styled, { css } from "styled-components/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useDispatch } from "react-redux";
-import { removeTodo, toggleTodo } from "../Store/Actions/todoAction";
 
-function TodoItem({ data }) {
-  const dispatch = useDispatch();
-  const toggleChecked = () => {
-    dispatch(toggleTodo(data.id));
+function TodoItem({ data, toggleChecked, removeItem }) {
+  const handleToggle = () => {
+    toggleChecked(data.id);
   };
 
-  const clickRemove = () => {
-    dispatch(removeTodo(data.id));
+  const handleRemove = () => {
+    removeItem(data.id);
   };
   return (
     <TodoContainer>
       <View style={styles.todoText}>
-        <TouchableOpacity
-          style={styles.todoCheckbox}
-          onPressOut={toggleChecked}
-        >
+        <TouchableOpacity style={styles.todoCheckbox} onPressOut={handleToggle}>
           <MaterialCommunityIcons
             size={20}
             name={
@@ -32,7 +26,7 @@ function TodoItem({ data }) {
         </TouchableOpacity>
         <TodoContent isChecked={data.isChecked}>{data.content}</TodoContent>
       </View>
-      <TouchableOpacity onPressOut={clickRemove}>
+      <TouchableOpacity onPressOut={handleRemove}>
         <MaterialCommunityIcons
           style={styles.todoDelBtn}
           size={30}

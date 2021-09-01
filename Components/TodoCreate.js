@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useSelector, useDispatch } from "react-redux";
-import { createTodo } from "../Store/Actions/todoAction";
 
-function Header() {
+function Header({ createItem }) {
   const [todoInput, setTodoInput] = useState("");
-  const dispatch = useDispatch();
 
   const submitTodo = () => {
-    dispatch(createTodo(todoInput));
+    createItem(todoInput);
     setTodoInput("");
   };
   const changeInput = (input) => {

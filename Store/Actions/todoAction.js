@@ -1,9 +1,22 @@
-import { CREATE_TODO, REMOVE_TODO, UPDATE_TODO, TOGGLE_TODO } from "./types";
+import {
+  CREATE_TODO,
+  REMOVE_TODO,
+  UPDATE_TODO,
+  TOGGLE_TODO,
+  SET_TODOS,
+} from "./types";
 
-export const createTodo = (todoItem) => {
+export const setTodos = (todo) => {
+  return {
+    type: SET_TODOS,
+    todos,
+  };
+};
+
+export const createTodo = (todo) => {
   return {
     type: CREATE_TODO,
-    todoItem,
+    todo,
   };
 };
 
