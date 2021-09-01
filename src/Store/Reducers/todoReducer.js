@@ -13,6 +13,7 @@ const initialState = {
 };
 
 export default function todo(state = initialState, action) {
+  //리듀서 함수로써 각 case마다 case의 이름에 해당하는 동작이 이루어진다
   switch (action.type) {
     case GET_TODOS_SUCCESS:
       return { error: action.error, todoLists: [...action.payload] };

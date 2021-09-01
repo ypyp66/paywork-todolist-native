@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 function Todo() {
   const { todoState, createItem, removeItem, toggleChecked, updateItem } =
     TodoService();
-  const error = useSelector((state) => state.todo.error);
+  const error = useSelector((state) => state.todo.error); //에러 상태 정의
 
   return (
     <Container>

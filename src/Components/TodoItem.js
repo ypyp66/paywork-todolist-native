@@ -18,7 +18,6 @@ function TodoItem({ data, toggleChecked, removeItem, updateItem }) {
   };
 
   const handleToggle = () => {
-    console.log("handle", data.id, data.isCheck);
     toggleChecked(data.id, data.isCheck);
   };
 
@@ -47,9 +46,10 @@ function TodoItem({ data, toggleChecked, removeItem, updateItem }) {
             }
           />
         </TouchableOpacity>
-        {!update ? (
+        {!update ? ( //업데이트 상태가 아니면 content를 그냥 보여준다.
           <TodoContent isCheck={data.isCheck}>{data.content}</TodoContent>
         ) : (
+          //업데이트 상태면 Input으로 바뀌고 기본 값은 content값이다.
           <TextInput
             style={styles.input}
             value={input}
